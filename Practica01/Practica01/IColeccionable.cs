@@ -16,8 +16,8 @@ namespace Practica01
 	public interface IColeccionable
 	{
 		int cuantos();
-		int maximo();
-		int minimo();
+		Comparable maximo();
+		Comparable minimo();
 		void agregar(Comparable c);
 		bool contiene(Comparable c);
 	}
