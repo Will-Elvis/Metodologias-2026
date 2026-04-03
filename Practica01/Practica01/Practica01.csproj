@@ -51,8 +51,10 @@
     <Compile Include="Cola.cs" />
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
+    <Compile Include="tect.cs" />
     <Compile Include="IColeccionable.cs" />
     <Compile Include="Numero.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Pila.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
