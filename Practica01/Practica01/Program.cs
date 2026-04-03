@@ -18,9 +18,9 @@ namespace Practica01
 			
 			// TODO: Implement Functionality Here
 			
-			Console.WriteLine(p.contiene(new Numero(24)));
+	
 			Console.Write("Press any key to continue . . . ");
-			Console.ReadKey(true);
+			 Console.ReadKey(true);
 		}
 		
 		// metodos de la clase 
@@ -31,6 +31,23 @@ namespace Practica01
 				Comparable com = new Numero(valor);
 				c.agregar(com);
 			}
+		}
+		
+		public static void informar(IColeccionable c){
+			//cuantos
+			Console.WriteLine("tamaño del Coleccionable: "+c.cuantos());
+			//minimo
+			Console.WriteLine("minimo: "+c.minimo());
+			//maximo
+			Console.WriteLine("maximo: "+c.maximo());
+			//contiene
+			Console.WriteLine("Ingrese un valor para buscar en la Coleccion: ");
+			int read = int.Parse(Console.ReadLine());
+			Comparable com = new Numero(read);
+			if(c.contiene(com)){
+				Console.WriteLine("el elemento se encuentra en la lista");	
+			}else
+				Console.WriteLine("el elemento no se encuentra en la lista");
 		}
 		
 	}
