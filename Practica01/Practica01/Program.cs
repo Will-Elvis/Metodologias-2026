@@ -17,13 +17,23 @@ namespace Practica01
 			Console.WriteLine("Hello World!");
 			
 			// TODO: Implement Functionality Here
+//			Ejercicio  7
+//			Pila pila = new Pila();
+//			Cola cola = new Cola();
+//			llenar(pila);
+//			llenar(cola);
+//			informar(pila);
+//			informar(cola);
+			//ejercicio 9
 			
-			Pila pila = new Pila();
-			Cola cola = new Cola();
-			llenar(pila);
-			llenar(cola);
-			informar(pila);
-			informar(cola);
+			Pila p = new Pila();
+			Cola c = new Cola();
+			ColeccionMultiple multiple = new ColeccionMultiple(p,c);
+			llenar(p);
+			llenar(c);
+			informar(p);
+			informar(c);
+			informar(multiple);
 			Console.Write("Press any key to continue . . . ");
 			 Console.ReadKey(true);
 		}
