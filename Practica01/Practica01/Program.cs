@@ -18,14 +18,20 @@ namespace Practica01
 			
 			// TODO: Implement Functionality Here
 			
-	
+			Pila pila = new Pila();
+			Cola cola = new Cola();
+			llenar(pila);
+			llenar(cola);
+			informar(pila);
+			informar(cola);
 			Console.Write("Press any key to continue . . . ");
 			 Console.ReadKey(true);
 		}
 		
+		//atributo de la clase 
+		static Random azar = new Random();
 		// metodos de la clase 
 		public static void llenar(IColeccionable c){
-			Random azar = new Random();
 			for (int i = 0; i < 20; i++) {
 				int valor = azar.Next(1,100);
 				Comparable com = new Numero(valor);
