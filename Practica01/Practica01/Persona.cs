@@ -36,39 +36,43 @@ namespace Practica01
 		#region Comparable implementation
 		// DNI --> int
 		
-//		public bool sosIgual(Comparable c)
-//		{
-//			return this.dni == ((Persona)c).getDni();
-//		}
-//
-//		public bool sosMenor(Comparable c)
-//		{
-//			return this.dni < ((Persona)c).getDni();
-//		}
-//
-//		public bool sosMayor(Comparable c)
-//		{
-//			return this.dni > ((Persona)c).getDni();
-//		}
-		
-		
-		// Nombre --> String 
-		
 		public bool sosIgual(Comparable c)
 		{
-			return this.nombre == ((Persona)c).getNombre();
+			return this.dni == ((Persona)c).getDni();
 		}
 
 		public bool sosMenor(Comparable c)
 		{
-			return this.nombre.CompareTo(((Persona)c).getNombre()) < 0;
+			return this.dni < ((Persona)c).getDni();
 		}
 
 		public bool sosMayor(Comparable c)
 		{
-			return this.nombre.CompareTo(((Persona)c).getNombre()) > 0;
+			return this.dni > ((Persona)c).getDni();
 		}
 		
+		
+		// Nombre --> String 
+//		
+//		public bool sosIgual(Comparable c)
+//		{
+//			return this.nombre == ((Persona)c).getNombre();
+//		}
+//
+//		public bool sosMenor(Comparable c)
+//		{
+//			return this.nombre.CompareTo(((Persona)c).getNombre()) < 0;
+//		}
+//
+//		public bool sosMayor(Comparable c)
+//		{
+//			return this.nombre.CompareTo(((Persona)c).getNombre()) > 0;
+//		}
+		public override string ToString()
+		{
+		    return dni.ToString();
+		}
+//		
 		//averiguar funcionalidad del CompareTo luego en Google  
 		//this.obj.CompareTo(obj) > 0 ; --> true  ejemplo JUAN > Ana (true)
 

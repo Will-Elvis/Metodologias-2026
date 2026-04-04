@@ -25,16 +25,25 @@ namespace Practica01
 //			llenar(cola);
 //			informar(pila);
 //			informar(cola);
-			//ejercicio 9
 			
+			//ejercicio 9
+//			Pila p = new Pila();
+//			Cola c = new Cola();
+//			ColeccionMultiple multiple = new ColeccionMultiple(p,c);
+//			llenar(p);
+//			llenar(c);
+//			informar(p);
+//			informar(c);
+//			informar(multiple);
+			
+			//ejercicio 14
 			Pila p = new Pila();
 			Cola c = new Cola();
 			ColeccionMultiple multiple = new ColeccionMultiple(p,c);
-			llenar(p);
-			llenar(c);
-			informar(p);
-			informar(c);
+			llenarAlumnos(p);
+			llenarAlumnos(c);
 			informar(multiple);
+			
 			Console.Write("Press any key to continue . . . ");
 			 Console.ReadKey(true);
 		}
@@ -49,7 +58,7 @@ namespace Practica01
 				c.agregar(com);
 			}
 		}
-		
+		// informar sirve tanto para datos como Persona o Numeros , pero no ambos al mismo tiempo
 		public static void informar(IColeccionable c){
 			//cuantos
 			Console.WriteLine("tamaño del Coleccionable: "+c.cuantos());
@@ -58,13 +67,31 @@ namespace Practica01
 			//maximo
 			Console.WriteLine("maximo: "+c.maximo());
 			//contiene
-			Console.WriteLine("Ingrese un valor para buscar en la Coleccion: ");
-			int read = int.Parse(Console.ReadLine());
-			Comparable com = new Numero(read);
-			if(c.contiene(com)){
-				Console.WriteLine("el elemento se encuentra en la lista");	
-			}else
-				Console.WriteLine("el elemento no se encuentra en la lista");
+			Console.WriteLine("tipo de dato del coleccionable: "+c.GetType());
+			if(c.maximo() is Persona){
+				Console.WriteLine("Esta coleccion esta repleta de Personas");
+				Console.Write("Ingrese un Dni para buscar en la Coleccion: ");
+				int read = int.Parse(Console.ReadLine());
+				//instanciamos alumno por que una Persona es algo abstracto
+				Comparable com = new Alumno("",read,0,0);
+				if (c.contiene(com)) {
+					Console.WriteLine("La persona se encuentra en la Lista");
+				}else
+					Console.WriteLine("La persona no se encuentra en la Lista");
+			}
+			else if(c.maximo() is Numero){
+				Console.WriteLine("Esto coleccion esta repleto de numeros");
+				Console.Write("Ingrese un valor para buscar en la Coleccion: ");
+				int read = int.Parse(Console.ReadLine());
+				Comparable com = new Numero(read);
+				if(c.contiene(com)){
+					Console.WriteLine("el elemento se encuentra en la lista");	
+				}else
+					Console.WriteLine("el elemento no se encuentra en la lista");
+			}
+			
+			//comprobacion de tipo de datos que tiene la coleccion 
+			
 		}
 		
 		public static void llenarAlumnos(IColeccionable c){
