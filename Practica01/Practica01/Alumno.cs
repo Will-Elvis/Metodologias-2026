@@ -32,5 +32,20 @@ namespace Practica01
 		public double getPromedio(){
 			return this.promedio;
 		}
+		//sobreescribimos metodos hereados de Persona
+		public override bool sosIgual(Comparable c)
+		{
+			return this.legajo == ((Alumno)c).getLegajo();
+		}
+
+		public override bool sosMenor(Comparable c)
+		{
+			return this.legajo < ((Alumno)c).getLegajo();
+		}
+
+		public override bool sosMayor(Comparable c)
+		{
+			return this.legajo > ((Alumno)c).getLegajo();
+		}
 	}
 }

@@ -37,12 +37,14 @@ namespace Practica01
 //			informar(multiple);
 			
 			//ejercicio 14
-			Pila p = new Pila();
-			Cola c = new Cola();
-			ColeccionMultiple multiple = new ColeccionMultiple(p,c);
-			llenarAlumnos(p);
-			llenarAlumnos(c);
-			informar(multiple);
+//			Pila p = new Pila();
+//			Cola c = new Cola();
+//			ColeccionMultiple multiple = new ColeccionMultiple(p,c);
+//			llenarAlumnos(p);
+//			llenarAlumnos(c);
+//			informar(multiple);
+			
+			
 			
 			Console.Write("Press any key to continue . . . ");
 			 Console.ReadKey(true);
