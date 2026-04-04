@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumno.cs" />
     <Compile Include="Cola.cs" />
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
