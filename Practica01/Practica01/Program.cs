@@ -7,6 +7,7 @@
  * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
+using System.Collections.Generic;
 
 namespace Practica01
 {
@@ -64,6 +65,31 @@ namespace Practica01
 				Console.WriteLine("el elemento se encuentra en la lista");	
 			}else
 				Console.WriteLine("el elemento no se encuentra en la lista");
+		}
+		
+		public static void llenarAlumnos(IColeccionable c){
+			List<string> alumnos =new List<string>(){
+    "Ana", "Juan", "Pedro", "Lucia", "Maria",
+    "Carlos", "Sofia", "Miguel", "Laura", "Tomas",
+    "Valentina", "Lucas", "Camila", "Mateo", "Martina",
+    "Benjamin", "Julieta", "Franco", "Agustina", "Nicolas",
+    "Paula", "Santiago", "Carolina", "Diego", "Florencia",
+    "Joaquin", "Micaela", "Bruno", "Antonella", "Gonzalo",
+    "Victoria", "Ezequiel", "Rocio", "Facundo", "Melina",
+    "Ramiro", "Noelia", "Federico", "Aldana", "Marcos",
+    "Bianca", "Leandro", "Candela", "Maximiliano", "Delfina",
+    "Iván", "Cecilia", "Hernán", "Elena", "Matías"};
+			
+			for (int i = 0; i < 20; i++) {
+				//azar
+				int legajo = azar.Next(10000,100000);
+				int documento = azar.Next(10000000,100000000);
+				int valor = azar.Next(10,101);
+				int indice = azar.Next(0,50);
+				string alumno = alumnos[indice];
+				double promedio = valor/10.0;
+				c.agregar(new Alumno(alumno,documento,legajo,promedio));
+			}
 		}
 		
 	}
