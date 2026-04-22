@@ -8,33 +8,32 @@
  */
 using System;
 using System.Collections.Generic;
+using Practica02._strategy;
 
 namespace Practica02
 {
 	class Program
 	{
+		//atributo de la clase 
+		static Random azar = new Random();
+		
 		public static void Main(string[] args)
 		{
+			//================ MAIN Consola===============================================
+			
+			
+			Pila p = new Pila();
+			Cola c = new Cola();
+			ColeccionMultiple multiple = new ColeccionMultiple(p,c);
+			llenarAlumnos(p);
+			llenarAlumnos(c);
+			informar(multiple);
+			
 			Console.WriteLine("Hello World!");
 			Console.Write("Press any key to continue . . . ");
 			 Console.ReadKey(true);
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		//================ MAIN ===============================================
-		
-		//atributo de la clase 
-		static Random azar = new Random();
 		// metodos de la clase 
 		public static void llenar(IColeccionable c){
 			for (int i = 0; i < 20; i++) {
@@ -52,13 +51,14 @@ namespace Practica02
 			//maximo
 			Console.WriteLine("maximo: "+c.maximo());
 			//contiene
-			Console.WriteLine("tipo de dato del coleccionable: "+c.GetType());
+			//Tipo de dato 
 			if(c.maximo() is Persona){
-				Console.WriteLine("Esta coleccion esta repleta de Personas");
+				Console.WriteLine("Esta coleccion esta llena de Personas");
 				Console.Write("Ingrese un Dni para buscar en la Coleccion: ");
 				int read = int.Parse(Console.ReadLine());
 				//instanciamos alumno por que una Persona es algo abstracto
 				Comparable com = new Alumno("",read,0,0);
+				((Alumno)com).setEstrategia(new EstrategiaPorDni());
 				if (c.contiene(com)) {
 					Console.WriteLine("La persona se encuentra en la Lista");
 				}else
@@ -80,17 +80,18 @@ namespace Practica02
 		}
 		
 		public static void llenarAlumnos(IColeccionable c){
-			List<string> alumnos =new List<string>(){
-    "Ana", "Juan", "Pedro", "Lucia", "Maria",
-    "Carlos", "Sofia", "Miguel", "Laura", "Tomas",
-    "Valentina", "Lucas", "Camila", "Mateo", "Martina",
-    "Benjamin", "Julieta", "Franco", "Agustina", "Nicolas",
-    "Paula", "Santiago", "Carolina", "Diego", "Florencia",
-    "Joaquin", "Micaela", "Bruno", "Antonella", "Gonzalo",
-    "Victoria", "Ezequiel", "Rocio", "Facundo", "Melina",
-    "Ramiro", "Noelia", "Federico", "Aldana", "Marcos",
-    "Bianca", "Leandro", "Candela", "Maximiliano", "Delfina",
-    "Iván", "Cecilia", "Hernán", "Elena", "Matías"};
+			List<string> nombres =new List<string>(){
+	
+			    "Ana", "Juan", "Pedro", "Lucia", "Maria",
+			    "Carlos", "Sofia", "Miguel", "Laura", "Tomas",
+			    "Valentina", "Lucas", "Camila", "Mateo", "Martina",
+			    "Benjamin", "Julieta", "Franco", "Agustina", "Nicolas",
+			    "Paula", "Santiago", "Carolina", "Diego", "Florencia",
+			    "Joaquin", "Micaela", "Bruno", "Antonella", "Gonzalo",
+			    "Victoria", "Ezequiel", "Rocio", "Facundo", "Melina",
+			    "Ramiro", "Noelia", "Federico", "Aldana", "Marcos",
+			    "Bianca", "Leandro", "Candela", "Maximiliano", "Delfina",
+			    "Iván", "Cecilia", "Hernán", "Elena", "Matías"};
 			
 			for (int i = 0; i < 20; i++) {
 				//azar
@@ -98,9 +99,13 @@ namespace Practica02
 				int documento = azar.Next(10000000,100000000);
 				int valor = azar.Next(10,101);
 				int indice = azar.Next(0,50);
-				string alumno = alumnos[indice];
+				string nombre = nombres[indice];
 				double promedio = valor/10.0;
-				c.agregar(new Alumno(alumno,documento,legajo,promedio));
+				//c.agregar(new Alumno(alumno,documento,legajo,promedio));
+				//Ejercicio 02 --> TP2
+				Comparable alum = new Alumno(nombre,documento,legajo,promedio);
+				((Alumno)alum).setEstrategia(new EstrategiaPorDni());
+				c.agregar(alum);
 			}
 		}
 		

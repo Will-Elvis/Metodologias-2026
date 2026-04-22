@@ -50,19 +50,19 @@ namespace Practica02
 		public override bool sosIgual(Comparable c)
 		{
 			//return this.legajo == ((Alumno)c).getLegajo();
-			return estrategia.sosIgual(this,(Alumno)c);
+			return this.estrategia.sosIgual(this,(Alumno)c);
 		}
 
 		public override bool sosMenor(Comparable c)
 		{
 			//return this.legajo < ((Alumno)c).getLegajo();
-			return estrategia.sosMenor(this,(Alumno)c);
+			return this.estrategia.sosMenor(this,(Alumno)c);
 		}
 
 		public override bool sosMayor(Comparable c)
 		{
 			//return this.legajo > ((Alumno)c).getLegajo();
-			return estrategia.sosMayor(this,(Alumno)c);
+			return this.estrategia.sosMayor(this,(Alumno)c);
 		}
 	}
 }
