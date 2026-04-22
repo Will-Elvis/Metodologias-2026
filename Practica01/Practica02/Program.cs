@@ -22,13 +22,24 @@ namespace Practica02
 		{
 			//================ MAIN Consola===============================================
 			
-			
+			/*
 			Pila p = new Pila();
 			Cola c = new Cola();
 			ColeccionMultiple multiple = new ColeccionMultiple(p,c);
 			llenarAlumnos(p);
 			llenarAlumnos(c);
 			informar(multiple);
+			*/
+			//ejercicio 7 TP2
+			Pila pila = new Pila();
+			Cola cola = new Cola();
+			Conjunto conjunto = new Conjunto();
+			llenarAlumnos(pila);
+			llenarAlumnos(cola);
+			llenarAlumnos(conjunto);
+			imprimirElementos(pila);
+			imprimirElementos(cola);
+			imprimirElementos(conjunto);
 			
 			Console.WriteLine("Hello World!");
 			Console.Write("Press any key to continue . . . ");
@@ -114,12 +125,13 @@ namespace Practica02
 			Iterador iterador = col.crearIterador();
 			iterador.primero();
 			//mientras que no llegue a su fin el coleccionable va a seguir ejecutando
+			Console.WriteLine("====Inicio======");
 			while (!iterador.fin()) {
 				Comparable elemento = iterador.actual();
 				Console.WriteLine(elemento);
-				
 				iterador.siguente();
 			}
+			Console.WriteLine("====Fin======");
 		}
 		
 	}

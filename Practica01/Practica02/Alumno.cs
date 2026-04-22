@@ -64,5 +64,18 @@ namespace Practica02
 			//return this.legajo > ((Alumno)c).getLegajo();
 			return this.estrategia.sosMayor(this,(Alumno)c);
 		}
+		/*
+		public override string ToString()
+		{
+		    return "Nombre: " + getNombre() + " DNI: " + getDni() + " Legajo: " + legajo + " Promedio: " + promedio;
+		}
+		*/
+		
+		public override string ToString()
+		{
+		    return "\nNombre: " + getNombre() + " \nDNI: " + getDni() + " \nLegajo: " + getLegajo() + " \nPromedio: " + getPromedio();
+		}
+
+
 	}
 }
