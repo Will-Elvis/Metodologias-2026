@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
-    <Compile Include="Cola.cs" />
+    <Compile Include="Cola.cs">
+      <DependentUpon>Numero.cs</DependentUpon>
+    </Compile>
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
     <Compile Include="tect.cs" />
