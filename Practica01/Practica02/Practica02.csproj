@@ -51,6 +51,7 @@
     <Compile Include="Alumno.cs" />
     <Compile Include="colecciones\Cola.cs" />
     <Compile Include="colecciones\ColeccionMultiple.cs" />
+    <Compile Include="colecciones\Conjunto.cs" />
     <Compile Include="colecciones\Pila.cs" />
     <Compile Include="interfaces_genericas\Comparable.cs" />
     <Compile Include="interfaces_genericas\IColeccionable.cs" />
