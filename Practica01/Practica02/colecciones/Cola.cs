@@ -8,13 +8,14 @@
  */
 using System;
 using System.Collections.Generic;
+using Practica02._iterator;
 
 namespace Practica02
 {
 	/// <summary>
 	/// Description of Cola.
 	/// </summary>
-	public class Cola : IColeccionable
+	public class Cola : IColeccionable , Iterable
 	{
 		private List<Comparable> elementos;
 		public Cola()
@@ -33,7 +34,10 @@ namespace Practica02
 			}else
 				throw new Exception("La Cola esta Vacia");
 		}
-		
+		//metodo getter de la lista<>
+		public List<Comparable> getElementos(){
+			return this.elementos;
+		}
 
 		#region IColeccionable implementation
 
@@ -83,6 +87,16 @@ namespace Practica02
 				}
 			}
 			return false;
+		}
+
+		#endregion
+
+		#region Iterable implementation
+
+		public Iterador crearIterador()
+		{
+			//creamos el iterador personalizado para la  Collecion Cola.cs
+			return new IteradorDeCola(this);
 		}
 
 		#endregion

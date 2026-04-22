@@ -1,13 +1,14 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using Practica02._iterator;
 
 namespace Practica02
 {
 	/// <summary>
 	/// Description of Conjunto.
 	/// </summary>
-	public class Conjunto : IColeccionable
+	public class Conjunto : IColeccionable ,Iterable
 	{
 		private List<Comparable> listaElementos;
 		public Conjunto()
@@ -79,5 +80,14 @@ namespace Practica02
 		{
 			return pertenece(c);
 		}
+
+		#region Iterable implementation
+
+		public Iterador crearIterador()
+		{
+			return new IteradorDeConjunto(this);
+		}
+
+		#endregion
 	}
 }

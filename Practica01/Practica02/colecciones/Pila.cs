@@ -8,13 +8,14 @@
  */
 using System;
 using System.Collections.Generic;
+using Practica02._iterator;
 
 namespace Practica02
 {
 	/// <summary>
 	/// Una Pila sigue el principio de LIFO(last In First Out)
 	/// </summary>
-	public class Pila : IColeccionable
+	public class Pila : IColeccionable, Iterable
 	{
 		private List<Comparable> elementos;
 		public Pila()
@@ -95,5 +96,11 @@ namespace Practica02
 			return elementos.ToString();
 		}
 
+		#region Iterable implementation
+		public Iterador crearIterador()
+		{
+			return new IteradorDePila(this);
+		}
+		#endregion
 	}
 }
