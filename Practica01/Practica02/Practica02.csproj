@@ -55,7 +55,6 @@
     <Compile Include="colecciones\Pila.cs" />
     <Compile Include="interfaces_genericas\Comparable.cs" />
     <Compile Include="interfaces_genericas\IColeccionable.cs" />
-    <Compile Include="interfaces_genericas\tect.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
@@ -67,6 +66,7 @@
     <Compile Include="_strategy\IEstrategiaDeComparacion.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Condiciones.txt" />
     <None Include="Properties\app.config" />
   </ItemGroup>
   <ItemGroup>
