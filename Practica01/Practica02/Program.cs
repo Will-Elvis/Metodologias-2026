@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using Practica02._iterator;
 using Practica02._strategy;
 
 namespace Practica02
@@ -106,6 +107,18 @@ namespace Practica02
 				Comparable alum = new Alumno(nombre,documento,legajo,promedio);
 				((Alumno)alum).setEstrategia(new EstrategiaPorDni());
 				c.agregar(alum);
+			}
+		}
+		//usando el Iterador -- > imprmir todos los elementos del coleccionable
+		public static void imprimirElementos(Iterable col){
+			Iterador iterador = col.crearIterador();
+			iterador.primero();
+			//mientras que no llegue a su fin el coleccionable va a seguir ejecutando
+			while (!iterador.fin()) {
+				Comparable elemento = iterador.actual();
+				Console.WriteLine(elemento);
+				
+				iterador.siguente();
 			}
 		}
 		

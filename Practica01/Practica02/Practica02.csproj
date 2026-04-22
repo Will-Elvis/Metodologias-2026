@@ -63,7 +63,7 @@
     <Compile Include="_iterator\Iterador.cs" />
     <Compile Include="_iterator\IteradorDeCola.cs" />
     <Compile Include="_iterator\IteradorDeConjunto.cs" />
-    <Compile Include="_iterator\IteradordePila.cs" />
+    <Compile Include="_iterator\IteradorDePila.cs" />
     <Compile Include="_strategy\EstrategiaPorDni.cs" />
     <Compile Include="_strategy\EstrategiaPorLegajo.cs" />
     <Compile Include="_strategy\EstrategiaPorNombre.cs" />

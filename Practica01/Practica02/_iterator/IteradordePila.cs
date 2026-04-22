@@ -4,13 +4,13 @@ using System;
 namespace Practica02._iterator
 {
 	/// <summary>
-	/// Description of IteradordePila.
+	/// Description of IteradorDePila.
 	/// </summary>
-	public class IteradordePila : Iterador
+	public class IteradorDePila : Iterador
 	{
 		private Pila pila;
 		private int indice;
-		public IteradordePila(Pila pila)
+		public IteradorDePila(Pila pila)
 		{
 			this.pila = pila;
 			primero();
