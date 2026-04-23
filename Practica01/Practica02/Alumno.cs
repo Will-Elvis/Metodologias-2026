@@ -70,10 +70,13 @@ namespace Practica02
 		    return "Nombre: " + getNombre() + " DNI: " + getDni() + " Legajo: " + legajo + " Promedio: " + promedio;
 		}
 		*/
+		public IEstrategiaDeComparacion getEstrategia(){
+			return this.estrategia;
+		}
 		
 		public override string ToString()
 		{
-		    return "\nNombre: " + getNombre() + " \nDNI: " + getDni() + " \nLegajo: " + getLegajo() + " \nPromedio: " + getPromedio();
+			return "\nEstrategia de Comparacion: " + getEstrategia() +"\nNombre: " + getNombre() + " \nDNI: " + getDni() + " \nLegajo: " + getLegajo() + " \nPromedio: " + getPromedio();
 		}
 
 
