@@ -1,0 +1,25 @@
+﻿
+using System;
+
+namespace Practica03
+{
+	/// <summary>
+	/// Description of LectorDeDatos.
+	/// </summary>
+	public class LectorDeDatos
+	{
+		public LectorDeDatos()
+		{
+		}
+		//devuelve un numero leido por teclado
+		public int numeroPorTeclado(){
+			Console.Write("Ingrese un Numero: ");
+			return int.Parse(Console.ReadLine());
+		}
+		//devuelve un string leido por teclado
+		public string stringPorTeclado(){
+			Console.Write("Ingrese un String: ");
+			return Console.ReadLine();
+		}
+	}
+}
