@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{8642267E-EE5A-4421-A71A-FD60F45CA894}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Practica03</RootNamespace>
+    <AssemblyName>Practica03</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alumno.cs" />
+    <Compile Include="colecciones\Cola.cs" />
+    <Compile Include="colecciones\ColeccionMultiple.cs" />
+    <Compile Include="colecciones\Conjunto.cs" />
+    <Compile Include="colecciones\Pila.cs" />
+    <Compile Include="interfaces_genericas\Comparable.cs" />
+    <Compile Include="interfaces_genericas\IColeccionable.cs" />
+    <Compile Include="Numero.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_iterator\Iterable.cs" />
+    <Compile Include="_iterator\Iterador.cs" />
+    <Compile Include="_iterator\IteradorDeCola.cs" />
+    <Compile Include="_iterator\IteradorDeConjunto.cs" />
+    <Compile Include="_iterator\IteradorDePila.cs" />
+    <Compile Include="_strategy\EstrategiaPorDni.cs" />
+    <Compile Include="_strategy\EstrategiaPorLegajo.cs" />
+    <Compile Include="_strategy\EstrategiaPorNombre.cs" />
+    <Compile Include="_strategy\EstrategiaPorPromedio.cs" />
+    <Compile Include="_strategy\IEstrategiaDeComparacion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Condiciones.txt" />
+    <None Include="Properties\app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="colecciones" />
+    <Folder Include="_strategy" />
+    <Folder Include="_iterator" />
+    <Folder Include="interfaces_genericas" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
+
