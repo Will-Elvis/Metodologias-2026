@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
     <ProjectGuid>{8642267E-EE5A-4421-A71A-FD60F45CA894}</ProjectGuid>
@@ -53,6 +53,7 @@
     <Compile Include="colecciones\ColeccionMultiple.cs" />
     <Compile Include="colecciones\Conjunto.cs" />
     <Compile Include="colecciones\Pila.cs" />
+    <Compile Include="GeneradorDeDatosAleatorios.cs" />
     <Compile Include="interfaces_genericas\Comparable.cs" />
     <Compile Include="interfaces_genericas\IColeccionable.cs" />
     <Compile Include="Numero.cs" />
@@ -76,10 +77,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="colecciones" />
+    <Folder Include="_factory_method" />
+    <Folder Include="_observer" />
     <Folder Include="_strategy" />
     <Folder Include="_iterator" />
     <Folder Include="interfaces_genericas" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
-
