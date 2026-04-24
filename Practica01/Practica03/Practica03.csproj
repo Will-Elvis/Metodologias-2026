@@ -59,6 +59,7 @@
     <Compile Include="LectorDeDatos.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Persona.cs" />
+    <Compile Include="Profesor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_factory_method\FabricaDeAlumno.cs" />
