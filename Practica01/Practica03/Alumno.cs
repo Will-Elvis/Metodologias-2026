@@ -27,7 +27,7 @@ namespace Practica03
 			legajo =l;
 			promedio= p;
 			//Paso 3.2 definir Estrategia por defecto
-			estrategia = new EstrategiaPorPromedio();
+			estrategia = new EstrategiaPorDni();
 		}
 		
 		//getters
@@ -50,6 +50,10 @@ namespace Practica03
 		public override bool sosIgual(Comparable c)
 		{
 			//return this.legajo == ((Alumno)c).getLegajo();
+			//this es el alumno Actual quien posee todos los atributos en esta clase
+			// (Alumno)c == un alumno pasado por parametro para comparar con el actual de la clase "this"
+			//dellega el trabajo a la estrategia que tiene  el almno por defecto que es por Promdio
+			// entonces -- > this.EstratategiaPorPromedio.sosIgual(this,alumnopasado_por_parametro)
 			return this.estrategia.sosIgual(this,(Alumno)c);
 		}
 
