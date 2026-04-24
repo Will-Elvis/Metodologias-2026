@@ -56,23 +56,53 @@ namespace Practica03
 			informar(pila);
 			*/
 			
-			Pila pila = new Pila();
-			llenarAlumnos(pila);
-			cambiarEstrategia(pila, new EstrategiaPorNombre());
-			informar(pila, 2);
-			
+			//ejercicio 7 TP3
+			IColeccionable coleccion = FabricaDeColeccionables.crearColeccion(4);
+			llenar(coleccion,2);
+			informar(coleccion,2);
+		
 			Console.WriteLine("Hello World!");
 			Console.Write("Press any key to continue . . . ");
 			 Console.ReadKey(true);
 		}
 		
+		// respuesta al Ejericio 7 pero tranquilamente se podria hacer mas facil con factory method
+		/*
+		public static IColeccionable preguntarColeccion(){
+			Console.Write("Que tipo de coleccion desea Crear:");
+			int opcion = 0;
+			while (!(opcion==5)) {
+				Console.WriteLine("Que tipo de coleccion desea crear:");
+		        Console.WriteLine("1. Coleccion Tipo Cola");
+		        Console.WriteLine("2. Coleccion Tipo Pila");
+		        Console.WriteLine("3. Coleccion Tipo Conjunto");
+		        Console.WriteLine("4. Coleccion Tipo ColeccionMultiple");
+		        Console.WriteLine("5. Salir");
+        		Console.Write("Ingrese una opcion: ");
+				try {
+					opcion = int.Parse(Console.ReadLine());
+					//break sale del swith y Return del ambos  corta el flujo del while tambien
+					switch (opcion) {
+							case 1: return new Cola();
+							case 2: return new Pila();
+							case 3: return new Conjunto();
+							case 4: return new ColeccionMultiple(new Cola(),new Pila());break;
+							case 5: return null;
+							default: Console.WriteLine("Valor incorrecto intente nuevamente");break;
+				}
+					
+				} catch (Exception) {
+					
+					Console.WriteLine("Debe ingresar un numero valido.");
+				}
+			}
+		}*/
+		
 		// Tp3 Modificamos llenar  ejercicio 6
 		public static void llenar(IColeccionable cole,int opcion){
 			for (int i = 0; i < 20; i++) {
-				int valor = azar.Next(1,100);
 				Comparable com = FabricaDeComparables.crearAleatorio(opcion);
 				//seteamos la estrategia si es un Alumno
-				
 				cole.agregar(com);
 			}
 		}
@@ -87,13 +117,13 @@ namespace Practica03
 			Comparable comparable = FabricaDeComparables.crearPorTeclado(opcion);
 	
 			if(c.contiene(comparable)){
-				Console.WriteLine("El elemento se esta registrado en la coleccion.");
+				Console.WriteLine("El elemento  esta registrado en la coleccion.");
 			}else
 				Console.WriteLine("El elemento no se encuentra en la coleccion!!.");
 			
 			
 		}
-		
+		/*
 		public static void llenarAlumnos(IColeccionable c){
 			List<string> nombres =new List<string>(){
 	
@@ -123,6 +153,7 @@ namespace Practica03
 				c.agregar(alum);
 			}
 		}
+		*/
 		//usando el Iterador -- > imprmir todos los elementos del coleccionable
 		public static void imprimirElementos(Iterable col){
 			Iterador iterador = col.crearIterador();

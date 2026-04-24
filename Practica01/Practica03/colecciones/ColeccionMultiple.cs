@@ -46,10 +46,17 @@ namespace Practica03
 			}else
 				return c;
 		}
+		// le damos Funcionalidad a agregar
 		public void agregar(Comparable c)
 		{
-			throw new NotImplementedException("Este metodo no hace nada Ejercicio 8 practica 1");
+			if (this.pila.cuantos() == this.cola.cuantos()) {
+				this.pila.agregar(c);
+			}
+			else {
+				this.cola.agregar(c);
+			}
 		}
+
 		public bool contiene(Comparable c)
 		{
 			return pila.contiene(c)||cola.contiene(c); // true si el alguna se cumple , false en caso de

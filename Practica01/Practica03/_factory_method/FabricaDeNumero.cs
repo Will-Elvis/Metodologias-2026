@@ -18,7 +18,9 @@ namespace Practica03._factory_method
 		}
 		public override Comparable crearPorTeclado()
 		{
-			return new Numero(lector.numeroPorTeclado());
+			Console.Write("Ingrese un numero para buscar: ");
+			int numero = lector.numeroPorTeclado();
+			return new Numero(numero);
 		}
 		#endregion
 	}
