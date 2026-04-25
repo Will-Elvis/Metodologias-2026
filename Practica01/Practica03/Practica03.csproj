@@ -66,11 +66,13 @@
     <Compile Include="_factory_method\FabricaDeColeccionables.cs" />
     <Compile Include="_factory_method\FabricaDeComparables.cs" />
     <Compile Include="_factory_method\FabricaDeNumero.cs" />
+    <Compile Include="_factory_method\FabricaDeProfesor.cs" />
     <Compile Include="_iterator\Iterable.cs" />
     <Compile Include="_iterator\Iterador.cs" />
     <Compile Include="_iterator\IteradorDeCola.cs" />
     <Compile Include="_iterator\IteradorDeConjunto.cs" />
     <Compile Include="_iterator\IteradorDePila.cs" />
+    <Compile Include="_strategy\EstrategiaPorAntiguedad.cs" />
     <Compile Include="_strategy\EstrategiaPorDni.cs" />
     <Compile Include="_strategy\EstrategiaPorLegajo.cs" />
     <Compile Include="_strategy\EstrategiaPorNombre.cs" />

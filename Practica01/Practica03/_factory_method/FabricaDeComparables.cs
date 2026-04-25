@@ -27,6 +27,7 @@ namespace Practica03._factory_method
 			switch(opcion){
 				case 1: fabrica = new FabricaDeNumero(); break;
 				case 2: fabrica = new FabricaDeAlumno(); break;
+				case 3: fabrica = new FabricaDeProfesor(); break;
 			}
 			return fabrica.crearAleatorio();
 		}
@@ -37,6 +38,7 @@ namespace Practica03._factory_method
 			switch (opcion) {
 				case 1: fabrica = new FabricaDeNumero(); break;
 				case 2: fabrica = new FabricaDeAlumno(); break;
+				case 3: fabrica = new FabricaDeProfesor(); break;
 			}
 			return fabrica.crearPorTeclado();
 		}

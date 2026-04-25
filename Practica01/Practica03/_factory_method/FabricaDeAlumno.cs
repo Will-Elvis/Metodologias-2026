@@ -14,7 +14,7 @@ namespace Practica03._factory_method
 		#region implemented abstract members of FabricaDeComparables
 		public override Comparable crearAleatorio()
 		{
-			return new Alumno(generador.stringAleatorio(5),generador.numeroAleatorio(100000000),generador.numeroAleatorio(10000),(double)generador.numeroAleatorio(10));
+			return new Alumno(generador.stringAleatorio(10),generador.numeroAleatorio(100000000),generador.numeroAleatorio(10000),(double)generador.numeroAleatorio(10));
 		}
 		public override Comparable crearPorTeclado()
 		{
