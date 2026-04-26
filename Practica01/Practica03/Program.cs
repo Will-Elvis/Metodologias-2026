@@ -57,10 +57,13 @@ namespace Practica03
 			*/
 			
 			//ejercicio 7 TP3
-			IColeccionable coleccion = FabricaDeColeccionables.crearColeccion(4);
+			/*IColeccionable coleccion = FabricaDeColeccionables.crearColeccion(4);
 			llenar(coleccion,3);
 			informar(coleccion,3);
-		
+			*/
+			
+			
+			
 			Console.WriteLine("Hello World!");
 			Console.Write("Press any key to continue . . . ");
 			 Console.ReadKey(true);

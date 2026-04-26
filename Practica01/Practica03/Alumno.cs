@@ -7,6 +7,7 @@
  * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
+using System.Collections.Generic;
 using Practica03._strategy;
 
 namespace Practica03
@@ -17,10 +18,17 @@ namespace Practica03
 // Paso 3 numero tres modificammos el Contexto para aplicar STRATEGY
 	public class Alumno : Persona
 	{
+		public Alumno()
+		{
+			throw new NotImplementedException();
+		}
+
 		private int legajo;
 		private double promedio;
+		private List<string> frases;
 		// Paso 3.1 Creamos la Composicion que esta en el diagrama UML 
 		private IEstrategiaDeComparacion estrategia;
+		Random azar = new Random();
 		
 		public Alumno(string nom,int doc,int l, double p) :base(nom,doc)
 		{
@@ -28,6 +36,7 @@ namespace Practica03
 			promedio= p;
 			//Paso 3.2 definir Estrategia por defecto
 			estrategia = new EstrategiaPorDni();
+			frases = new List<string>(){"Mirando el celular","Dibujando en el margen de la carpeta", "Tirando aviones de papel"};
 		}
 		
 		//getters
@@ -82,7 +91,15 @@ namespace Practica03
 		{
 			return "\nEstrategia de Comparacion: " + getEstrategia() +"\nNombre: " + getNombre() + " \nDNI: " + getDni() + " \nLegajo: " + getLegajo() + " \nPromedio: " + getPromedio();
 		}
-
+		//Metodos del TP3
+		public void prestarAtencion(){
+			Console.WriteLine("Prestando atencion: ");
+		}
+		public void distraerse(){
+			int indiceAleatorio = azar.Next(this.frases.Count);
+			Console.WriteLine(this.frases[indiceAleatorio]);
+			
+		}
 
 	}
 }
