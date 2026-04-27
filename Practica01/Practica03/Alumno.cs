@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using Practica03._strategy;
+using Practica03._observer;
 
 namespace Practica03
 {
@@ -16,12 +17,8 @@ namespace Practica03
 	/// Description of Alumno.
 	/// </summary>
 // Paso 3 numero tres modificammos el Contexto para aplicar STRATEGY
-	public class Alumno : Persona
+	public class Alumno : Persona, Observador
 	{
-		public Alumno()
-		{
-			throw new NotImplementedException();
-		}
 
 		private int legajo;
 		private double promedio;
@@ -101,6 +98,16 @@ namespace Practica03
 			
 		}
 
+		#region Observador implementation
+		public void actualizar(Observado o)
+		{
+			//si es True
+			if(((Profesor)o).estaHablando()){
+				this.prestarAtencion();
+			}else
+				this.distraerse();
+		}
+		#endregion
 	}
 }
 
