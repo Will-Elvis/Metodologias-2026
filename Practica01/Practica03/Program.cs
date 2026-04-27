@@ -181,6 +181,13 @@ namespace Practica03
 			}
 		}
 		
+		public static void dictadoDeClases(Profesor profe){
+			for (int i = 0; i <= 5; i++) {
+				profe.hablarALaClase();
+				profe.escribirEnElPizarron();
+			}
+		}
+		
 	}
 	
 }
