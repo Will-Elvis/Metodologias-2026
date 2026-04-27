@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using Practica03._iterator;
+using Practica03._observer;
 using Practica03._strategy;
 using Practica03._factory_method;
 
@@ -23,46 +24,24 @@ namespace Practica03
 		{
 			//================ MAIN Consola===============================================
 			
-			/*
-			Pila p = new Pila();
-			Cola c = new Cola();
-			ColeccionMultiple multiple = new ColeccionMultiple(p,c);
-			llenarAlumnos(p);
-			llenarAlumnos(c);
-			informar(multiple);
-			*/
-			/* ejercicio 7 TP2
-			Pila pila = new Pila();
-			Cola cola = new Cola();
-			Conjunto conjunto = new Conjunto();
-			llenarAlumnos(pila);
-			llenarAlumnos(cola);
-			llenarAlumnos(conjunto);
-			imprimirElementos(pila);
-			imprimirElementos(cola);
-			imprimirElementos(conjunto);
-			*/
-			
-			//ejercicio 9
-			/*Pila pila = new Pila();
-			llenarAlumnos(pila);
-			cambiarEstrategia(pila,new EstrategiaPorNombre());
-			informar(pila);
-			cambiarEstrategia(pila,new EstrategiaPorLegajo());
-			informar(pila);
-			cambiarEstrategia(pila,new EstrategiaPorPromedio());
-			informar(pila);
-			cambiarEstrategia(pila,new EstrategiaPorDni());
-			informar(pila);
-			*/
-			
 			//ejercicio 7 TP3
 			/*IColeccionable coleccion = FabricaDeColeccionables.crearColeccion(4);
 			llenar(coleccion,3);
 			informar(coleccion,3);
 			*/
 			
-			
+			Profesor profe = new Profesor("Mauro",1234567,7);
+			Pila p = new Pila();
+			llenar(p,2);
+			Iterador ite = p.crearIterador(); // Iterador de pila
+			//definimos el primer elemento del iterador 
+			ite.primero();
+			// se ejecuta mientras el iterador no llego al final de la lista
+			while (!ite.fin()) {
+				profe.agregarObservador((Observador)ite.actual()); //ite.actual() --> me tira  un Comparable
+				ite.siguente();
+			}
+			dictadoDeClases(profe);
 			
 			Console.WriteLine("Hello World!");
 			Console.Write("Press any key to continue . . . ");
