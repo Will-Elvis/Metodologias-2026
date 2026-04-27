@@ -1,0 +1,69 @@
+/*
+ * Creado por SharpDevelop.
+ * Usuario: PcHome
+ * Fecha: 3/4/2026
+ * Hora: 16:49
+ * 
+ * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
+ */
+using System;
+
+namespace Practica04
+{
+	/// <summary>
+	/// Description of ColeccionMultiple.
+	/// </summary>
+	public class ColeccionMultiple: IColeccionable
+	{
+		private Pila pila;
+		private Cola cola;
+		public ColeccionMultiple(Pila p, Cola c)
+		{
+			this.pila = p;
+			this.cola = c;
+		}
+		
+		#region IColeccionable implementation
+		public int cuantos()
+		{
+			return pila.cuantos()+cola.cuantos();
+		}
+		public Comparable minimo()
+		{
+			Comparable p = pila.minimo();
+			Comparable c = cola.minimo();
+			if(p.sosMenor(c)){
+				return p;
+			}else
+				return c;
+		}
+		public Comparable maximo()
+		{
+			Comparable p = pila.maximo();
+			Comparable c = cola.maximo();
+			if(p.sosMayor(c)){
+				return p;
+			}else
+				return c;
+		}
+		// le damos Funcionalidad a agregar
+		public void agregar(Comparable c)
+		{
+			if (this.pila.cuantos() == this.cola.cuantos()) {
+				this.pila.agregar(c);
+			}
+			else {
+				this.cola.agregar(c);
+			}
+		}
+
+		public bool contiene(Comparable c)
+		{
+			return pila.contiene(c)||cola.contiene(c); // true si el alguna se cumple , false en caso de
+			// no estar en ninguna y true si esta en ambas
+		}
+		#endregion
+	}
+}
+
+
