@@ -80,7 +80,7 @@ namespace Practica04
 			Console.WriteLine(this.frases[indiceAleatorio]);
 		}
 		//nuevos metodos para la clase alumno
-		public int responderPregunta(int pregunta){
+		public virtual int responderPregunta(int pregunta){
 			return azar.Next(1,4);
 		}
 		public string mostrarCalificacion(){
