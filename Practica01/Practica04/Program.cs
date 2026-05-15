@@ -26,11 +26,69 @@ namespace Practica04
 		{
 			//================ MAIN Consola===============================================
 
-
+			//implementamos  Ejercicio 4 del tp4
 			
+			
+			// ========= PRIMERA SOLUCION ===============
+			/*
+			// Creamos el profesor del sistema MDPI.
+			Teacher teacher = new Teacher();
+			// Creamos 10 alumnos comunes.
+			for (int i = 0; i < 10; i++){
+				// Creamos un Alumno de nuestro sistema.
+				IAlumno alumno = new Alumno("Alumno " + i, 40000000 + i, 20000 + i, 4);
+				// Adaptamos el Alumno a Student, porque Teacher solo acepta Student.
+				Student student = new AlumnoAdapter(alumno);
+				// Agregamos el Student a la clase del profesor.
+				teacher.goToClass(student);
+			}
+			// Creamos 10 alumnos muy estudiosos.
+			for (int i = 0; i < 10; i++){
+				// Creamos un AlumnoMuyEstudioso de nuestro sistema.
+				IAlumno alumnoMuyEstudioso = new AlumnoMuyEstudioso("Alumno estudioso " + i,44000000 + i,30000 + i,10);
+				// Lo adaptamos a Student para que MDPI pueda usarlo.
+				Student student = new AlumnoAdapter(alumnoMuyEstudioso);
+				// Lo agregamos a la clase del profesor.
+				teacher.goToClass(student);
+			}
+			// El profesor pasa lista, toma examen y muestra resultados.
+			teacher.teachingAClass();
+			*/
+			
+			
+			// ========= SEGUNDA SOLUCION (FABRICAS)===============
+			/*
+			// Creamos el profesor del sistema MDPI.
+			Teacher teacher = new Teacher();
+		
+			// Creamos 10 alumnos comunes usando la fábrica.
+			for (int i = 0; i < 10; i++)
+			{
+				// La opción 2 de la fábrica crea un Alumno.
+				IAlumno alumno = (IAlumno)FabricaDeComparables.crearAleatorio(2);
+		
+				// Adaptamos el Alumno a Student y lo agregamos a la clase.
+				teacher.goToClass(new AlumnoAdapter(alumno));
+			}
+		
+			// Creamos 10 alumnos muy estudiosos usando la fábrica.
+			for (int i = 0; i < 10; i++)
+			{
+				// La opción 4 de la fábrica crea un AlumnoMuyEstudioso.
+				IAlumno alumnoMuyEstudioso = (IAlumno)FabricaDeComparables.crearAleatorio(4);
+		
+				// Adaptamos el AlumnoMuyEstudioso a Student y lo agregamos a la clase.
+				teacher.goToClass(new AlumnoAdapter(alumnoMuyEstudioso));
+			}
+		
+			// El profesor pasa lista, toma examen y muestra resultados.
+			teacher.teachingAClass();
+			*/
+			
+
 			Console.WriteLine("Hello World!");
 			Console.Write("Press any key to continue . . . ");
-			 Console.ReadKey(true);
+			Console.ReadKey(true);
 		}
 		
 
