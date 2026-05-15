@@ -12,6 +12,8 @@ using Practica04._iterator;
 using Practica04._observer;
 using Practica04._strategy;
 using Practica04._factory_method;
+using Practica04.Adapter;
+using MetodologíasDeProgramaciónI;
 
 namespace Practica04
 {

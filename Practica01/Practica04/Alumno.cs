@@ -16,7 +16,7 @@ namespace Practica04
 	/// <summary>
 	/// Description of Alumno.
 	/// </summary>
-	public class Alumno : Persona, Observador
+	public class Alumno : Persona, Observador, IAlumno
 	{
 		//atributos 
 		private int legajo;
