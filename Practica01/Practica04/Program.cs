@@ -57,7 +57,7 @@ namespace Practica04
 			
 			
 			// ========= SEGUNDA SOLUCION (FABRICAS)===============
-			/*
+			
 			// Creamos el profesor del sistema MDPI.
 			Teacher teacher = new Teacher();
 		
@@ -66,7 +66,7 @@ namespace Practica04
 			{
 				// La opción 2 de la fábrica crea un Alumno.
 				IAlumno alumno = (IAlumno)FabricaDeComparables.crearAleatorio(2);
-		
+				alumno.setEstrategia(new EstrategiaPorCalificacion());
 				// Adaptamos el Alumno a Student y lo agregamos a la clase.
 				teacher.goToClass(new AlumnoAdapter(alumno));
 			}
@@ -76,14 +76,14 @@ namespace Practica04
 			{
 				// La opción 4 de la fábrica crea un AlumnoMuyEstudioso.
 				IAlumno alumnoMuyEstudioso = (IAlumno)FabricaDeComparables.crearAleatorio(4);
-		
+				alumnoMuyEstudioso.setEstrategia(new EstrategiaPorCalificacion());
 				// Adaptamos el AlumnoMuyEstudioso a Student y lo agregamos a la clase.
 				teacher.goToClass(new AlumnoAdapter(alumnoMuyEstudioso));
 			}
 		
 			// El profesor pasa lista, toma examen y muestra resultados.
 			teacher.teachingAClass();
-			*/
+			
 			
 
 			Console.WriteLine("Hello World!");

@@ -80,6 +80,7 @@
     <Compile Include="_observer\Observado.cs" />
     <Compile Include="_observer\Observador.cs" />
     <Compile Include="_strategy\EstrategiaPorAntiguedad.cs" />
+    <Compile Include="_strategy\EstrategiaPorCalificacion.cs" />
     <Compile Include="_strategy\EstrategiaPorDni.cs" />
     <Compile Include="_strategy\EstrategiaPorLegajo.cs" />
     <Compile Include="_strategy\EstrategiaPorNombre.cs" />
