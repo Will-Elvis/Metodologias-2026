@@ -117,6 +117,7 @@ namespace Practica04
 			*/
 			
 			// =========== SOLUCION CON FABRICA DE ALUMNOS DECORADOs ============
+			//ejercicio 8 poner en ejecucion y comprobar  (todo okey)
 			Teacher teacher = new Teacher();
 
 			for (int i = 0; i < 10; i++)
