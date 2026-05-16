@@ -85,7 +85,8 @@ namespace Practica04
 		}
 		public string mostrarCalificacion(){
 			// raton perez  7
-			return this.getNombre() + " " + this.getCalificacion();
+			// "\t es una tabulacion  y \n salto de linea no confundir"
+			return this.getNombre() + "\t" + this.getCalificacion();
 		}
 		#region Observador implementation
 		public void actualizar(Observado o)

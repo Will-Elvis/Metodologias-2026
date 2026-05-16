@@ -14,6 +14,7 @@ using Practica04._strategy;
 using Practica04._factory_method;
 using Practica04.Adapter;
 using MetodologíasDeProgramaciónI;
+using Practica04._decorator;
 
 namespace Practica04
 {
@@ -57,7 +58,7 @@ namespace Practica04
 			
 			
 			// ========= SEGUNDA SOLUCION (FABRICAS)===============
-			
+			/*
 			// Creamos el profesor del sistema MDPI.
 			Teacher teacher = new Teacher();
 		
@@ -83,9 +84,43 @@ namespace Practica04
 		
 			// El profesor pasa lista, toma examen y muestra resultados.
 			teacher.teachingAClass();
+			*/
+			// ================== PRUEBA DE DECORADORES ============
+			/*
+			IAlumno alumno = new Alumno("Raton Perez", 12345678, 12345, 8);
+			alumno.setCalificacion(6);
+			
+			Console.WriteLine("Sin decorar:");
+			Console.WriteLine(alumno.mostrarCalificacion());
+			
+			Console.WriteLine("\nCon legajo:");
+			IAlumno conLegajo = new DecoradoConLegajo(alumno);
+			Console.WriteLine(conLegajo.mostrarCalificacion());
+			
+			Console.WriteLine("\nCon letras:");
+			IAlumno conLetras = new DecoradoConLetras(alumno);
+			Console.WriteLine(conLetras.mostrarCalificacion());
+			
+			Console.WriteLine("\nCon promocion:");
+			IAlumno conPromocion = new DecoradoConPromocion(alumno);
+			Console.WriteLine(conPromocion.mostrarCalificacion());
+			
+			Console.WriteLine("\nCon asteriscos:");
+			IAlumno conAsterisco = new DecoradoConAsterisco(alumno);
+			Console.WriteLine(conAsterisco.mostrarCalificacion());
+			*/
+			
+			IAlumno decorado = new Alumno("Raton Perez", 12345678, 12345, 8);
+			decorado.setCalificacion(6);
+			// el orden de los decorados influye muchisimo , este orden fue establecido por el enunciado
+			decorado = new DecoradoConLegajo(decorado);
+			decorado = new DecoradoConLetras(decorado);
+			decorado = new DecoradoConPromocion(decorado);
+			decorado = new DecoradoConAsterisco(decorado);
+			
+			Console.WriteLine(decorado.mostrarCalificacion());
 			
 			
-
 			Console.WriteLine("Hello World!");
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
