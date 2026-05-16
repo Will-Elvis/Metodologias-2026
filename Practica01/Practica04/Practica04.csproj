@@ -72,7 +72,9 @@
     <Compile Include="_decorator\DecoradoConLetras.cs" />
     <Compile Include="_decorator\DecoradoConPromocion.cs" />
     <Compile Include="_factory_method\FabricaDeAlumno.cs" />
+    <Compile Include="_factory_method\FabricaDeAlumnoDecorado.cs" />
     <Compile Include="_factory_method\FabricaDeAlumnoMuyEstudioso.cs" />
+    <Compile Include="_factory_method\FabricaDeAlumnoMuyEstudiosoDecorado.cs" />
     <Compile Include="_factory_method\FabricaDeColeccionables.cs" />
     <Compile Include="_factory_method\FabricaDeComparables.cs" />
     <Compile Include="_factory_method\FabricaDeNumero.cs" />

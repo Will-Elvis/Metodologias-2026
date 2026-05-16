@@ -29,6 +29,8 @@ namespace Practica04._factory_method
 				case 2: fabrica = new FabricaDeAlumno(); break;
 				case 3: fabrica = new FabricaDeProfesor(); break;
 				case 4: fabrica = new FabricaDeAlumnoMuyEstudioso(); break;
+				case 5: fabrica = new FabricaDeAlumnoDecorado(); break;
+				case 6: fabrica = new FabricaDeAlumnoMuyEstudiosoDecorado(); break;
 			}
 			return fabrica.crearAleatorio();
 		}
@@ -41,6 +43,8 @@ namespace Practica04._factory_method
 				case 2: fabrica = new FabricaDeAlumno(); break;
 				case 3: fabrica = new FabricaDeProfesor(); break;
 				case 4: fabrica = new FabricaDeAlumnoMuyEstudioso(); break;
+				case 5: fabrica = new FabricaDeAlumnoDecorado(); break;
+				case 6: fabrica = new FabricaDeAlumnoMuyEstudiosoDecorado(); break;
 			}
 			return fabrica.crearPorTeclado();
 		}

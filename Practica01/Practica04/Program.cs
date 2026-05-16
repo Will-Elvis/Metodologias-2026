@@ -85,6 +85,56 @@ namespace Practica04
 			// El profesor pasa lista, toma examen y muestra resultados.
 			teacher.teachingAClass();
 			*/
+			
+			// =========== SOLUCION CON DECORADORES ===============
+			/*
+			Teacher teacher = new Teacher();
+			
+			for (int i = 0; i < 10; i++){
+				IAlumno alumno = (IAlumno)FabricaDeComparables.crearAleatorio(2);
+				alumno.setEstrategia(new EstrategiaPorCalificacion());
+				IAlumno decorado = new DecoradoConLegajo(alumno);
+				decorado = new DecoradoConLetras(decorado);
+				decorado = new DecoradoConPromocion(decorado);
+				decorado = new DecoradoConAsterisco(decorado);
+			
+				teacher.goToClass(new AlumnoAdapter(decorado));
+			}
+			
+			for (int i = 0; i < 10; i++){
+				IAlumno alumnoMuyEstudioso = (IAlumno)FabricaDeComparables.crearAleatorio(4);
+				alumnoMuyEstudioso.setEstrategia(new EstrategiaPorCalificacion());
+			
+				IAlumno decorado = new DecoradoConLegajo(alumnoMuyEstudioso);
+				decorado = new DecoradoConLetras(decorado);
+				decorado = new DecoradoConPromocion(decorado);
+				decorado = new DecoradoConAsterisco(decorado);
+			
+				teacher.goToClass(new AlumnoAdapter(decorado));
+			}
+			
+			teacher.teachingAClass();
+			*/
+			
+			// =========== SOLUCION CON FABRICA DE ALUMNOS DECORADOs ============
+			Teacher teacher = new Teacher();
+
+			for (int i = 0; i < 10; i++)
+			{
+				IAlumno alumno = (IAlumno)FabricaDeComparables.crearAleatorio(5);
+				alumno.setEstrategia(new EstrategiaPorCalificacion());
+				teacher.goToClass(new AlumnoAdapter(alumno));
+			}
+			
+			for (int i = 0; i < 10; i++)
+			{
+				IAlumno alumnoMuyEstudioso = (IAlumno)FabricaDeComparables.crearAleatorio(6);
+				alumnoMuyEstudioso.setEstrategia(new EstrategiaPorCalificacion());
+				teacher.goToClass(new AlumnoAdapter(alumnoMuyEstudioso));
+			}
+			
+			teacher.teachingAClass();
+			
 			// ================== PRUEBA DE DECORADORES ============
 			/*
 			IAlumno alumno = new Alumno("Raton Perez", 12345678, 12345, 8);
@@ -110,16 +160,15 @@ namespace Practica04
 			Console.WriteLine(conAsterisco.mostrarCalificacion());
 			*/
 			
-			IAlumno decorado = new Alumno("Raton Perez", 12345678, 12345, 8);
+			/*IAlumno decorado = new Alumno("Raton Perez", 12345678, 12345, 8);
 			decorado.setCalificacion(6);
 			// el orden de los decorados influye muchisimo , este orden fue establecido por el enunciado
 			decorado = new DecoradoConLegajo(decorado);
 			decorado = new DecoradoConLetras(decorado);
 			decorado = new DecoradoConPromocion(decorado);
 			decorado = new DecoradoConAsterisco(decorado);
-			
 			Console.WriteLine(decorado.mostrarCalificacion());
-			
+			*/
 			
 			Console.WriteLine("Hello World!");
 			Console.Write("Press any key to continue . . . ");
